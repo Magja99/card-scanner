@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .login {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        background-color: #0C3B2E;
+    }
+
+    .form {
+        position: relative;
+        z-index: 1;
+        height: 30%;
+        background: #FFFFFF;
+        border-radius: 25px;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        top: 275px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    .login form input {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 10x;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        border: none;
+        width: 800px;
+        max-width: 60%;
+        border-radius: 10px;
+        background-color: #FFBA00;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: #ffcc00;
+    }
+</style>
+<div class="login">
+    <div class="form">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="button" type="submit">Log In</button>
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<style>
+    body,
+    table {
+        margin: 25px 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    }
+
+    /* Style the table */
+    .image-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+        overflow: scroll;
+    }
+
+    .image-table th,
+    .image-table td {
+        padding: 12px 100px;
+        text-align: left;
+    }
+
+    .image-table th {
+        background-color: #f2f2f2;
+    }
+
+    .image-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .image-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+
+
+    .image-table tbody tr.active-row {
+        font-weight: bold;
+        color: #009879;
+    }
+
+
+    /* Style the images */
+    .image-table img {
+        max-width: 50px;
+        max-height: 50px;
+        transition: transform 0.3s;
+    }
+
+    /* Apply a scale transform on hover */
+    .image-table td:hover img {
+        transform: scale(6.1);
+    }
+
+    .special-row1 td:hover img {
+        transform: translate(0vh, 12vh) scale(6.1);
+    }
+
+    .special-row2 td:hover img {
+        transform: translate(0vh, 5vh) scale(6.1);
+    }
+
+    .special-row3 td:hover img {
+        transform: translate(0vh, -13vh) scale(6.1);
+    }
+
+    .special-row4 td:hover img {
+        transform: translate(0vh, -5vh) scale(6.1);
+    }
+</style>
+<table class="image-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in collection %}
+
+        {% if forloop.counter == 1 %}
+        <tr class="special-row1">
+            <td>{{c.name}}</td>
+            <td><img src="/static/scryfallImages/{{ c.jpg }}" alt="{{ c.jpg }}"></td>
+        </tr>
+        {% elif forloop.counter == 2 %}
+        <tr class="special-row2">
+            <td>{{c.name}}</td>
+            <td><img src="/static/scryfallImages/{{ c.jpg }}" alt="{{ c.jpg }}"></td>
+        </tr>
+        {% elif forloop.counter == collection|length %}
+        <tr class="special-row3">
+            <td>{{c.name}} </td>
+            <td><img src="/static/scryfallImages/{{ c.jpg }}" alt="{{ c.jpg }}"></td>
+        </tr>
+        {% elif forloop.counter == penult %}
+
+        <tr class="special-row4">
+            <td>{{c.name}}</td>
+            <td><img src="/static/scryfallImages/{{ c.jpg }}" alt="{{ c.jpg }}"></td>
+        </tr>
+        {% else %}
+        <tr>
+            <td>{{c.name}}</td>
+            <td><img src="/static/scryfallImages/{{ c.jpg }}" alt="{{ c.jpg }}"></td>
+        </tr>
+
+        {% endif %}
+
+        {% endfor %}
+    <tbody>
+</table>
+{% endblock %}

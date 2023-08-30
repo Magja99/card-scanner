@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #6da392;
+    }
+
+    .form-container {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form {
+        position: relative;
+        z-index: 1;
+        height: 30%;
+        background: #FFFFFF;
+        border-radius: 25px;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        top: 275px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    .video {
+        display: block;
+        margin: auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        border-radius: 22px 22px 22px 22px;
+        transform: translate(0vh, 12vh)
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        border: none;
+        margin: 0 25px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #FFBA00;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: #ffcc00;
+    }
+
+    table {
+        margin: 25px 25px;
+        padding: 0px;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    }
+
+    /* Style the table */
+    .image-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #6da392;
+        margin-top: 20px;
+        overflow: scroll;
+    }
+
+    .image-table th,
+    .image-table td {
+        padding: 12px 100px;
+        text-align: center;
+
+    }
+
+    .image-table th {
+        background-color: #f2f2f2;
+    }
+
+    .image-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+        background-color: #e6e6e6;
+    }
+
+    .image-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+
+    .form-input-styling {
+        border: none;
+        outline: none;
+        text-align: center;
+        line-height: 1.6;
+        font-size: 25px;
+        transform: translate(0vh, -15%);
+        font-weight: bold;
+    }
+</style>
+
+<head>
+    <title>Video Upload</title>
+</head>
+
+<body>
+    <div class="form-container">
+        {% if not filename %}
+        <div class="form">
+
+            <fieldset class="form-input-styling" name="Video File Upload and Display">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <label>Select a video file</label>
+                    <input type="file" name="file" autocomplete="off" required>
+                    <input type="submit" value="Upload and Display">
+
+
+
+                </form>
+            </fieldset>
+        </div>
+        {% endif %}
+
+        {% if filename %}
+        <table class="image-table">
+            <tbody>
+
+                {% for c in cards%}
+                <tr>
+
+                    <td>{{ c }}</td>
+                </tr>
+                {% endfor %}
+            <tbody>
+        </table>
+        <form method='get' action='#'>
+            <input class="button" type="submit" value="Add to database" name="Add to database" />
+        </form>
+        {% endif %}
+    </div>
+
+
+    {% if filename %}
+    <div class="form-container">
+        <video class="video" autoplay="autoplay" controls="controls" preload="preload">
+            <source src="{{ MEDIA_URL }}video.mp4" type="video/mp4">
+            </source>
+        </video>
+
+    </div>
+
+
+    {% endif %}
+
+</body>
+
+</html>

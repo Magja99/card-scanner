@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .color-side {
+            flex: 1;
+            background-color: #0C3B2E;
+            /* Set your desired color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-side {
+            flex: 1;
+            background: url('/static/mtgcolors.jpg') center center no-repeat;
+            /* Set your image path */
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content {
+            text-align: Left;
+            position: relative;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            left: -15px;
+            top: -60px;
+            word-wrap: break-word;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            width: 800px;
+            border-radius: 10px;
+            background-color: #FFBA00;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #ffcc00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="color-side">
+        <div class="content">
+            <h1>Magic The Gathering <br>Card Scanner
+            </h1>
+            <p>Digitize your collection</p>
+            <form method='get' action='#'>
+                <div><input type="submit" class="button" value="Log In" name="Log In" /></div>
+                <input type="submit" class="button" value="Sign Up" name="Sign Up" />
+            </form>
+        </div>
+    </div>
+    <div class="image-side">
+    </div>
+</body>
+
+</html>
