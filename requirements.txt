@@ -1,0 +1,24 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: win-64
+python=3.6.13
+pillow=8.3.2
+tensorflow-gpu=1.15.0
+sqlite=3.41.2
+numpy=1.19.5
+scikit-learn=0.24.2
+moviepy=1.0.3
+keras=2.3.1
+tqdm=4.64.1
+cudatoolkit=10.0.130
+cudnn=7.6.5
+h5py=2.10.0
+imageio=2.5.0
+matplotlib=3.3.4
+numba=0.53.1
+imutils=0.5.4
+isort=5.10.1
+jinja2=3.0.3
+cython=0.29.0
+django=3.2.20
+tf_slim=1.1.0
