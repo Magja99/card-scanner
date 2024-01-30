@@ -1,0 +1,22 @@
+<annotation>
+  <folder>images</folder>
+  <filename>genB5.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>830</width>
+    <height>580</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>mtgCard</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>457</xmin>
+      <ymin>155</ymin>
+      <xmax>695</xmax>
+      <ymax>442</ymax>
+    </bndbox>
+  </object>
+</annotation>

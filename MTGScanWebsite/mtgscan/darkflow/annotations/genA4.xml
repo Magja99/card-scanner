@@ -1,0 +1,22 @@
+<annotation>
+  <folder>images</folder>
+  <filename>genA4.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>5040</width>
+    <height>3360</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>mtgCard</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>3176</xmin>
+      <ymin>1322</ymin>
+      <xmax>3944</xmax>
+      <ymax>2324</ymax>
+    </bndbox>
+  </object>
+</annotation>

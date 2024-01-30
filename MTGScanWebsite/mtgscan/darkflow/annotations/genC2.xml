@@ -1,0 +1,22 @@
+<annotation>
+  <folder>images</folder>
+  <filename>genC2.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>2000</width>
+    <height>1333</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>mtgCard</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>220</xmin>
+      <ymin>88</ymin>
+      <xmax>650</xmax>
+      <ymax>688</ymax>
+    </bndbox>
+  </object>
+</annotation>
